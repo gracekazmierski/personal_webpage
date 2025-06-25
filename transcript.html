@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Transcript</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    <style>
+        /* Basic Reset & Font Smoothing */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Responsive Grid Styles */
+        @media (min-width: 768px) {
+            .md-grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .md-grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        }
+        @media (min-width: 1024px) {
+            .lg-grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        }
+    </style>
+</head>
+<body style="min-height: 100vh; background-image: linear-gradient(to bottom right, #f8fafc, #f1f5f9);">
+
+    <nav style="position: sticky; top: 0; z-index: 50; background-color: rgba(255, 255, 255, 0.8); backdrop-filter: blur(8px); border-bottom: 1px solid #e2e8f0;">
+        <div style="max-width: 72rem; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 0.75rem; padding-bottom: 0.75rem;">
+                <a href="/" style="display: flex; align-items: center; color: #475569; text-decoration: none; transition: color 0.2s;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+                    Back to Portfolio
+                </a>
+                <div style="font-size: 1.25rem; font-weight: 700; color: #0f172a;">Academic Transcript</div>
+                <div style="display: flex; gap: 1rem;">
+                    <button onclick="window.print()" style="padding: 0.25rem 0.75rem; font-size: 0.875rem; border: 1px solid #e2e8f0; background-color: #ffffff; color: #0f172a; border-radius: 0.375rem; display: flex; align-items: center; cursor: pointer;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M4 19.5A2.5 2.5 0 0 1 1.5 17V7a2.5 2.5 0 0 1 2.5-2.5"/><path d="M9 7h1v10H9z"/></svg>
+                        Print
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section style="padding-top: 3rem; padding-bottom: 3rem;">
+        <div style="max-width: 72rem; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h1 style="font-size: 1.875rem; font-weight: 700; color: #0f172a; margin-bottom: 1rem;">Academic Transcript</h1>
+                <p style="font-size: 1.125rem; color: #475569; max-width: 48rem; margin-left: auto; margin-right: auto;">
+                    My Unofficial Transcript - Computer Science (B.S.) at Brigham Young University - Idaho
+                </p>
+            </div>
+
+            <div class="md-grid-cols-2 lg-grid-cols-4" style="display: grid; gap: 1rem; margin-bottom: 2rem;">
+                <div style="border: 1px solid #e2e8f0; border-radius: 0.5rem; background-color: #ffffff; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);">
+                    <div style="display: flex; align-items: center; justify-content: center; padding: 1rem;">
+                        <div style="text-align: center;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #2563eb; margin: 0 auto 0.25rem auto;"><path d="M12 22l-7-3.5v-7l7 3.5 7-3.5v7Z"/><path d="M2 11.5v-7l10-5 10 5v7"/><path d="m10 13 2-1 2 1"/><path d="M10 17v-4.5l2-1 2 1V17"/><path d="M22 11.5v7l-10 5-10-5v-7"/></svg>
+                            <div style="font-size: 1.25rem; font-weight: 700; color: #0f172a;">Senior</div>
+                            <div style="font-size: 0.75rem; color: #475569;">Classification</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="border: 1px solid #e2e8f0; border-radius: 0.5rem; background-color: #ffffff; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);">
+                    <div style="display: flex; align-items: center; justify-content: center; padding: 1rem;">
+                        <div style="text-align: center;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #16a34a; margin: 0 auto 0.25rem auto;"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                            <div style="font-size: 1.25rem; font-weight: 700; color: #0f172a;">4.000</div>
+                            <div style="font-size: 0.75rem; color: #475569;">Current GPA</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="border: 1px solid #e2e8f0; border-radius: 0.5rem; background-color: #ffffff; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);">
+                    <div style="display: flex; align-items: center; justify-content: center; padding: 1rem;">
+                        <div style="text-align: center;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #7c3aed; margin: 0 auto 0.25rem auto;"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M4 19.5A2.5 2.5 0 0 1 1.5 17V7a2.5 2.5 0 0 1 2.5-2.5"/><path d="M9 7h1v10H9z"/></svg>
+                            <div style="font-size: 1.25rem; font-weight: 700; color: #0f172a;">89.0</div>
+                            <div style="font-size: 0.75rem; color: #475569;">Total Credits</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="border: 1px solid #e2e8f0; border-radius: 0.5rem; background-color: #ffffff; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);">
+                    <div style="display: flex; align-items: center; justify-content: center; padding: 1rem;">
+                        <div style="text-align: center;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #ea580c; margin: 0 auto 0.25rem auto;"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                            <div style="font-size: 1.25rem; font-weight: 700; color: #0f172a;">April 2026</div>
+                            <div style="font-size: 0.75rem; color: #475569;">Expected Graduation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-bottom: 2rem; border: 1px solid #e2e8f0; border-radius: 0.5rem; background-color: #ffffff; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);">
+                <div style="padding: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid #e2e8f0;">
+                    <div style="font-size: 1.125rem; font-weight: 600; text-align: center;">Program Information</div>
+                </div>
+                <div style="padding: 1rem; padding-top: 0;">
+                    <div class="md-grid-cols-3" style="display: grid; gap: 1rem; text-align: center;">
+                        <div>
+                            <h3 style="font-weight: 600; color: #0f172a; margin-bottom: 0.25rem; font-size: 0.875rem;">Degree</h3>
+                            <p style="color: #475569; font-size: 0.875rem;">Bachelor of Science</p>
+                        </div>
+                        <div>
+                            <h3 style="font-weight: 600; color: #0f172a; margin-bottom: 0.25rem; font-size: 0.875rem;">Major</h3>
+                            <p style="color: #475569; font-size: 0.875rem;">Computer Science</p>
+                        </div>
+                        <div>
+                            <h3 style="font-weight: 600; color: #0f172a; margin-bottom: 0.25rem; font-size: 0.875rem;">Emphasis</h3>
+                            <p style="color: #475569; font-size: 0.875rem;">Machine Learning</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-top: 3rem; padding-bottom: 3rem; background-color: #ffffff;">
+        <div style="max-width: 72rem; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem;">
+            <h2 style="font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 2rem; text-align: center;">Current Semesters</h2>
+
+            <div style="margin-bottom: 1.5rem; border: 1px solid #e2e8f0; border-radius: 0.5rem; background-color: #ffffff; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);">
+                <div style="padding: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid #e2e8f0;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <div style="font-size: 1.125rem; font-weight: 600;">Fall 2025 Semester</div>
+                            <p style="font-size: 0.875rem; color: #475569;">In Progress - 16.0 Credits</p>
+                        </div>
+                        <span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; background-color: #eff6ff; color: #1d4ed8; border-radius: 0.375rem; border: 1px solid #dbeafe;">
+                            In Progress
+                        </span>
+                    </div>
+                </div>
+                <div style="padding: 1rem; padding-top: 0;">
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <th style="text-align: left; padding: 0.5rem 0; font-weight: 600; font-size: 0.875rem;">Course</th>
+                                    <th style="text-align: left; padding: 0.5rem 0; font-weight: 600; font-size: 0.875rem;">Title</th>
+                                    <th style="text-align: center; padding: 0.5rem 0; font-weight: 600; font-size: 0.875rem;">Credits</th>
+                                    <th style="text-align: center; padding: 0.5rem 0; font-weight: 600; font-size: 0.875rem;">Grade</th>
+                                </tr>
+                            </thead>
+                            <tbody style="font-size: 0.75rem;">
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">CSE 351-01</td>
+                                    <td style="padding: 0.5rem 0;">Parallelism and Concurrency</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">2.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">
+                                        <span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; background-color: #f9fafb; border: 1px solid #f3f4f6; border-radius: 0.375rem;">In Progress</span>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">CYBER 201-03</td>
+                                    <td style="padding: 0.5rem 0;">Cybersecurity Fundamentals</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">2.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">
+                                        <span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; background-color: #f9fafb; border: 1px solid #f3f4f6; border-radius: 0.375rem;">In Progress</span>
+                                    </td>
+                                </tr>
+                                 <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">DS 350-01</td>
+                                    <td style="padding: 0.5rem 0;">Data Wrangling/Visualization</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">3.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">
+                                        <span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; background-color: #f9fafb; border: 1px solid #f3f4f6; border-radius: 0.375rem;">In Progress</span>
+                                    </td>
+                                </tr>
+                                 <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">DS 460-01</td>
+                                    <td style="padding: 0.5rem 0;">Big Data Programming</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">3.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">
+                                        <span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; background-color: #f9fafb; border: 1px solid #f3f4f6; border-radius: 0.375rem;">In Progress</span>
+                                    </td>
+                                </tr>
+                                 <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">MATH 283-01</td>
+                                    <td style="padding: 0.5rem 0;">Modeling with Probability</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">2.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">
+                                        <span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; background-color: #f9fafb; border: 1px solid #f3f4f6; border-radius: 0.375rem;">In Progress</span>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">REL 200C-A3</td>
+                                    <td style="padding: 0.5rem 0;">The Eternal Family</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">2.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">
+                                        <span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; background-color: #f9fafb; border: 1px solid #f3f4f6; border-radius: 0.375rem;">In Progress</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">WDD 199-01</td>
+                                    <td style="padding: 0.5rem 0;">Technology Product Dev I</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">2.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">
+                                        <span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; background-color: #f9fafb; border: 1px solid #f3f4f6; border-radius: 0.375rem;">In Progress</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 1.5rem; border: 1px solid #e2e8f0; border-radius: 0.5rem; background-color: #ffffff; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);">
+                 <div style="padding: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid #e2e8f0;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <div style="font-size: 1.125rem; font-weight: 600;">Spring 2025 Semester</div>
+                            <p style="font-size: 0.875rem; color: #475569;">In Progress - 12.0 Credits</p>
+                        </div>
+                        <span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; background-color: #eff6ff; color: #1d4ed8; border-radius: 0.375rem; border: 1px solid #dbeafe;">
+                            In Progress
+                        </span>
+                    </div>
+                </div>
+                <div style="padding: 1rem; padding-top: 0;">
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <th style="text-align: left; padding: 0.5rem 0; font-weight: 600; font-size: 0.875rem;">Course</th>
+                                    <th style="text-align: left; padding: 0.5rem 0; font-weight: 600; font-size: 0.875rem;">Title</th>
+                                    <th style="text-align: center; padding: 0.5rem 0; font-weight: 600; font-size: 0.875rem;">Credits</th>
+                                    <th style="text-align: center; padding: 0.5rem 0; font-weight: 600; font-size: 0.875rem;">Grade</th>
+                                </tr>
+                            </thead>
+                            <tbody style="font-size: 0.75rem;">
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">CSE 310-02</td>
+                                    <td style="padding: 0.5rem 0;">Applied Programming</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">3.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">
+                                        <span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; background-color: #eff6ff; border: 1px solid #dbeafe; border-radius: 0.375rem;">In Progress</span>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">CSE 381-02</td>
+                                    <td style="padding: 0.5rem 0;">Algorithms and Complexity</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">3.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">
+                                        <span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; background-color: #eff6ff; border: 1px solid #dbeafe; border-radius: 0.375rem;">In Progress</span>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">CSE 450-01</td>
+                                    <td style="padding: 0.5rem 0;">Machine Learning</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">3.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">
+                                        <span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; background-color: #eff6ff; border: 1px solid #dbeafe; border-radius: 0.375rem;">In Progress</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">MATH 341-01</td>
+                                    <td style="padding: 0.5rem 0;">Linear Algebra</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">3.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">
+                                        <span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; background-color: #eff6ff; border: 1px solid #dbeafe; border-radius: 0.375rem;">In Progress</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-top: 3rem; padding-bottom: 3rem; background-color: #f8fafc;">
+        <div style="max-width: 72rem; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem;">
+            <h2 style="font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 2rem; text-align: center;">Completed Semesters</h2>
+
+            <div style="margin-bottom: 1.5rem; border: 1px solid #e2e8f0; border-radius: 0.5rem; background-color: #ffffff; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);">
+                <div style="padding: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid #e2e8f0;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <div style="font-size: 1.125rem; font-weight: 600;">Winter 2025 Semester</div>
+                            <p style="font-size: 0.875rem; color: #475569;">14.0 Credits Earned</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; background-color: #dcfce7; color: #166534; border-radius: 0.375rem; margin-bottom: 0.25rem;">Completed</span>
+                            <div style="font-size: 0.75rem; color: #475569;">Semester GPA: 4.000</div>
+                        </div>
+                    </div>
+                </div>
+                 <div style="padding: 1rem; padding-top: 0;">
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <th style="text-align: left; padding: 0.5rem 0; font-weight: 600; font-size: 0.875rem;">Course</th>
+                                    <th style="text-align: left; padding: 0.5rem 0; font-weight: 600; font-size: 0.875rem;">Title</th>
+                                    <th style="text-align: center; padding: 0.5rem 0; font-weight: 600; font-size: 0.875rem;">Credits</th>
+                                    <th style="text-align: center; padding: 0.5rem 0; font-weight: 600; font-size: 0.875rem;">Grade</th>
+                                </tr>
+                            </thead>
+                            <tbody style="font-size: 0.75rem;">
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">CSE 212-A1</td>
+                                    <td style="padding: 0.5rem 0;">Programming w/Data Struct</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">2.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;"><span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; background-color: #dcfce7; color: #166534; border-radius: 0.375rem;">A</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">CSE 280-A1</td>
+                                    <td style="padding: 0.5rem 0;">Discrete Mathematics</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">3.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;"><span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; background-color: #dcfce7; color: #166534; border-radius: 0.375rem;">A</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">DS 250-A1</td>
+                                    <td style="padding: 0.5rem 0;">Data Science Programming</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">2.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;"><span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; background-color: #dcfce7; color: #166534; border-radius: 0.375rem;">A</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">ENG 301-A5</td>
+                                    <td style="padding: 0.5rem 0;">Advanced Writing & Research</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">3.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;"><span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; background-color: #dcfce7; color: #166534; border-radius: 0.375rem;">A</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">REL 225C-B1</td>
+                                    <td style="padding: 0.5rem 0;">Foundations of Restoration</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">2.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;"><span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; background-color: #dcfce7; color: #166534; border-radius: 0.375rem;">A</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">WDD 131-A1</td>
+                                    <td style="padding: 0.5rem 0;">Dynamic Web Fundamentals</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">2.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;"><span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; background-color: #dcfce7; color: #166534; border-radius: 0.375rem;">A</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+             <div style="margin-bottom: 1.5rem; border: 1px solid #e2e8f0; border-radius: 0.5rem; background-color: #ffffff; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);">
+                <div style="padding: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid #e2e8f0;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <div style="font-size: 1.125rem; font-weight: 600;">Fall 2024 Semester</div>
+                            <p style="font-size: 0.875rem; color: #475569;">18.0 Credits Earned</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; background-color: #dcfce7; color: #166534; border-radius: 0.375rem; margin-bottom: 0.25rem;">Completed</span>
+                            <div style="font-size: 0.75rem; color: #475569;">Semester GPA: 4.000</div>
+                        </div>
+                    </div>
+                </div>
+                 <div style="padding: 1rem; padding-top: 0;">
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <th style="text-align: left; padding: 0.5rem 0; font-weight: 600; font-size: 0.875rem;">Course</th>
+                                    <th style="text-align: left; padding: 0.5rem 0; font-weight: 600; font-size: 0.875rem;">Title</th>
+                                    <th style="text-align: center; padding: 0.5rem 0; font-weight: 600; font-size: 0.875rem;">Credits</th>
+                                    <th style="text-align: center; padding: 0.5rem 0; font-weight: 600; font-size: 0.875rem;">Grade</th>
+                                </tr>
+                            </thead>
+                            <tbody style="font-size: 0.75rem;">
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">CSE 100-A1</td>
+                                    <td style="padding: 0.5rem 0;">Introduction to Computing</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">1.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;"><span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; background-color: #dcfce7; color: #166534; border-radius: 0.375rem;">A</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">CSE 110</td>
+                                    <td style="padding: 0.5rem 0;">Intro to Programming</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">2.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;"><span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; background-color: #dbeafe; color: #1e40af; border-radius: 0.375rem;">P</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">CSE 121E-A1</td>
+                                    <td style="padding: 0.5rem 0;">Erlang Language</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">1.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;"><span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; background-color: #dcfce7; color: #166534; border-radius: 0.375rem;">A</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">CSE 170-A1</td>
+                                    <td style="padding: 0.5rem 0;">Technical Teamwork</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">2.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;"><span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; background-color: #dcfce7; color: #166534; border-radius: 0.375rem;">A</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">CSE 210-A1</td>
+                                    <td style="padding: 0.5rem 0;">Programming with Classes</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">2.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;"><span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; background-color: #dcfce7; color: #166534; border-radius: 0.375rem;">A</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">CSE 300-A2</td>
+                                    <td style="padding: 0.5rem 0;">Professional Readiness</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">1.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;"><span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; background-color: #dcfce7; color: #166534; border-radius: 0.375rem;">A</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">DS 150-A1</td>
+                                    <td style="padding: 0.5rem 0;">Data Intuition and Insight</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">2.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;"><span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; background-color: #dcfce7; color: #166534; border-radius: 0.375rem;">A</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">ECEN 106-A1</td>
+                                    <td style="padding: 0.5rem 0;">Computer Systems</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">2.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;"><span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; background-color: #dcfce7; color: #166534; border-radius: 0.375rem;">A</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">NUTR 150-A6</td>
+                                    <td style="padding: 0.5rem 0;">Human Nutrition Essentials</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">3.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;"><span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; background-color: #dcfce7; color: #166534; border-radius: 0.375rem;">A</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.5rem 0; font-family: monospace;">REL 275C-B5</td>
+                                    <td style="padding: 0.5rem 0;">Teachings of Book of Mormon</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;">2.0</td>
+                                    <td style="padding: 0.5rem 0; text-align: center;"><span style="display: inline-block; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; background-color: #dcfce7; color: #166534; border-radius: 0.375rem;">A</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-top: 3rem; padding-bottom: 3rem; background-color: #ffffff;">
+        <div style="max-width: 72rem; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem;">
+            <h2 style="font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 2rem; text-align: center;">Transfer Credits</h2>
+            
+            <div style="margin-bottom: 1.5rem; border: 1px solid #e2e8f0; border-radius: 0.5rem; background-color: #ffffff; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);">
+                <div style="padding: 1rem; padding-bottom: 0.75rem;">
+                    <div style="font-size: 1.125rem; color: #2563eb; text-align: center; font-weight: 600;">Transfer Credit Summary</div>
+                    <p style="text-align: center; font-size: 0.875rem; color: #475569;">
+                        A total of 57.0 credits were transferred from previous institutions, including Advanced Placement (AP),
+                        Brigham Young University, and Utah Tech University.
+                    </p>
+                </div>
+                <div style="padding: 1rem; padding-top: 0;">
+                    <p style="text-align: center; color: #475569; margin-bottom: 1rem; font-size: 0.875rem;">
+                        Courses include equivalents for History, English Composition, Programming Fundamentals, Biology,
+                        Calculus, Political Science, and Web Design.
+                    </p>
+                    <div class="md-grid-cols-3" style="display: grid; gap: 1rem; text-align: center;">
+                        <div style="background-color: #eff6ff; padding: 0.75rem; border-radius: 0.5rem;">
+                            <h3 style="font-weight: 600; color: #1e3a8a; margin-bottom: 0.25rem; font-size: 0.875rem;">Advanced Placement</h3>
+                            <div style="font-size: 1.25rem; font-weight: 700; color: #2563eb;">15.0</div>
+                            <div style="font-size: 0.75rem; color: #1d4ed8;">Credits</div>
+                        </div>
+                        <div style="background-color: #f0fdf4; padding: 0.75rem; border-radius: 0.5rem;">
+                             <h3 style="font-weight: 600; color: #166534; margin-bottom: 0.25rem; font-size: 0.875rem;">Brigham Young University</h3>
+                            <div style="font-size: 1.25rem; font-weight: 700; color: #16a34a;">9.0</div>
+                            <div style="font-size: 0.75rem; color: #15803d;">Credits</div>
+                        </div>
+                        <div style="background-color: #f5f3ff; padding: 0.75rem; border-radius: 0.5rem;">
+                            <h3 style="font-weight: 600; color: #5b21b6; margin-bottom: 0.25rem; font-size: 0.875rem;">Utah Tech University</h3>
+                            <div style="font-size: 1.25rem; font-weight: 700; color: #7c3aed;">33.0</div>
+                            <div style="font-size: 0.75rem; color: #6d28d9;">Credits</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="border: 1px solid #e2e8f0; border-radius: 0.5rem; background-color: #ffffff; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);">
+                <div style="padding: 1rem; padding-bottom: 0.75rem;">
+                    <div style="font-size: 1.125rem; font-weight: 600;">Notable Transfer Courses</div>
+                </div>
+                <div style="padding: 1rem; padding-top: 0;">
+                    <div class="md-grid-cols-2" style="display: grid; gap: 1rem;">
+                        <div>
+                            <h4 style="font-weight: 600; color: #0f172a; margin-bottom: 0.5rem; font-size: 0.875rem;">Computer Science & Mathematics</h4>
+                            <ul style="list-style-type: none; padding-left: 0; margin: 0; display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.85rem; color: #475569;">
+                                <li>• CS 1400 - Fundamentals of Programming (Utah Tech)</li>
+                                <li>• SE 1400 - Web Design Fundamentals (Utah Tech)</li>
+                                <li>• MATH 1100 - Business Calculus (Utah Tech)</li>
+                                <li>• MATH 1060 - Trigonometry (Utah Tech)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 600; color: #0f172a; margin-bottom: 0.5rem; font-size: 0.875rem;">General Education</h4>
+                            <ul style="list-style-type: none; padding-left: 0; margin: 0; display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.85rem; color: #475569;">
+                                <li>• WRTG 150 - Writing & Rhetoric (BYU)</li>
+                                <li>• BIOL 1610 - Principles of Biology I (Utah Tech)</li>
+                                <li>• AP World History & US History</li>
+                                <li>• AP Government & Politics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background-color: #0f172a; color: #ffffff; padding: 2rem 0;">
+        <div style="max-width: 72rem; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; text-align: center;">
+            <div style="margin-bottom: 1rem;">
+                <p style="color: #94a3b8; margin-bottom: 0.25rem; font-size: 0.875rem;">Unofficial Transcript</p>
+                <p style="font-size: 0.75rem; color: #64748b;">
+                    This is an unofficial transcript for portfolio purposes. For official transcripts, contact me directly!
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Grace Kazmierski</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        .backdrop-blur {
+            backdrop-filter: blur(12px);
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        .hover-shadow:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+        }
+        .featured-project {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .featured-project .text-slate-600 {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+        .featured-project .text-slate-900 {
+            color: white !important;
+        }
+        .featured-project .bg-slate-50 {
+            background: rgba(255, 255, 255, 0.1) !important;
+        }
+    </style>
+</head>
+<body class="min-h-screen gradient-bg">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <a href="index.html" class="flex items-center text-slate-600 hover:text-slate-900 transition-colors">
+                    <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
+                    Back to Portfolio
+                </a>
+                <div class="text-xl font-bold text-slate-900 flex items-center">
+                    <i data-lucide="folder" class="w-5 h-5 mr-2 text-blue-400"></i>
+                    All Projects
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://github.com/gracekazmierski" target="_blank" class="inline-flex items-center px-3 py-1 border border-slate-300 text-sm font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50 transition-colors">
+                        <i data-lucide="github" class="w-4 h-4 mr-2"></i>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="py-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-slate-900 mb-6">Project Portfolio</h1>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    A comprehensive collection of my software development projects spanning mobile applications, 
+                    AI integration, bioinformatics tools, and machine learning implementations.
+                </p>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid md:grid-cols-4 gap-6 mb-16">
+                <div class="bg-white border border-slate-200 rounded-lg shadow-sm p-6 text-center">
+                    <i data-lucide="smartphone" class="w-8 h-8 text-blue-600 mx-auto mb-2"></i>
+                    <div class="text-2xl font-bold text-slate-900">Mobile</div>
+                    <div class="text-sm text-slate-600">Flutter Apps</div>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-lg shadow-sm p-6 text-center">
+                    <i data-lucide="bot" class="w-8 h-8 text-green-600 mx-auto mb-2"></i>
+                    <div class="text-2xl font-bold text-slate-900">AI Integration</div>
+                    <div class="text-sm text-slate-600">LLMs & Bots</div>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-lg shadow-sm p-6 text-center">
+                    <i data-lucide="dna" class="w-8 h-8 text-purple-600 mx-auto mb-2"></i>
+                    <div class="text-2xl font-bold text-slate-900">Bioinformatics</div>
+                    <div class="text-sm text-slate-600">Genomic Tools</div>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-lg shadow-sm p-6 text-center">
+                    <i data-lucide="brain" class="w-8 h-8 text-orange-600 mx-auto mb-2"></i>
+                    <div class="text-2xl font-bold text-slate-900">Machine Learning</div>
+                    <div class="text-sm text-slate-600">AI Models</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Featured Project: BYUI Rideshare -->
+            <div class="featured-project project-card rounded-xl shadow-lg mb-16 overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="star" class="w-5 h-5 mr-2 text-yellow-300"></i>
+                                <span class="text-sm font-medium text-yellow-300">Featured Project</span>
+                            </div>
+                            <h2 class="text-3xl font-bold text-white mb-2">BYUI Rideshare Mobile App</h2>
+                            <div class="flex items-center space-x-4">
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white/20 text-white">Flutter</span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white/20 text-white">Firebase</span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white/20 text-white">Cross-Platform</span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/gracekazmierski/byuid_rideshare" target="_blank" class="inline-flex items-center px-4 py-2 bg-white/20 hover:bg-white/30 text-white text-sm font-medium rounded-lg transition-colors border border-white/30">
+                            <i data-lucide="external-link" class="w-4 h-4 mr-2"></i>
+                            View Project
+                        </a>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold text-white mb-4">Project Overview</h3>
+                            <p class="text-white/80 mb-6">
+                                A cross-platform mobile application designed to connect BYU-Idaho students for safe, efficient, 
+                                and community-driven ride-sharing. Built with Flutter and Firebase to provide a secure platform 
+                                for riders and drivers within the BYUI community, addressing campus commute needs.
+                            </p>
+
+                            <div class="mb-6">
+                                <h4 class="text-md font-semibold text-white mb-3">Key Features</h4>
+                                <ul class="text-white/80 space-y-2 text-sm">
+                                    <li>• <strong>Robust Authentication:</strong> Email/password and Google Sign-In integration</li>
+                                    <li>• <strong>Dynamic User Flow:</strong> Seamless redirection based on login status</li>
+                                    <li>• <strong>Profile Management:</strong> User role definition (rider/driver) during onboarding</li>
+                                    <li>• <strong>Modern UI:</strong> Custom theming inspired by Tailwind CSS design principles</li>
+                                    <li>• <strong>Responsive Design:</strong> Optimized for various mobile screen sizes</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="text-md font-semibold text-white mb-3">Technical Achievements</h4>
+                                <div class="bg-white/10 p-4 rounded-lg">
+                                    <div class="grid grid-cols-2 gap-4 text-sm">
+                                        <div>
+                                            <span class="font-medium text-white">Role:</span>
+                                            <span class="text-white/80">Lead Mobile Developer</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-white">Platform:</span>
+                                            <span class="text-white/80">iOS & Android</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-white">Authentication:</span>
+                                            <span class="text-white/80">Firebase Auth</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-white">Database:</span>
+                                            <span class="text-white/80">Cloud Firestore</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold text-white mb-4">Technical Challenges</h3>
+                            <div class="space-y-4">
+                                <div class="bg-white/10 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-white mb-2">Cross-Platform UI Replication</h5>
+                                    <p class="text-white/80 text-sm">Successfully translated complex Tailwind CSS designs into idiomatic Flutter widgets, maintaining design consistency across platforms.</p>
+                                </div>
+                                <div class="bg-white/10 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-white mb-2">Firebase Integration</h5>
+                                    <p class="text-white/80 text-sm">Implemented comprehensive user authentication states and data persistence with Firebase services.</p>
+                                </div>
+                                <div class="bg-white/10 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-white mb-2">State Management</h5>
+                                    <p class="text-white/80 text-sm">Effectively handled UI state changes including password visibility, loading indicators, and navigation flow.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Atom AI Assistant -->
+            <div class="project-card bg-white border border-slate-200 rounded-xl shadow-lg mb-16 overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900 mb-2">Atom – AI-Powered Discord Assistant</h2>
+                            <div class="flex items-center space-x-4">
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">Python</span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">LLaMA 3</span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">Discord.py</span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/gracekazmierski/atom-discord-bot" target="_blank" class="inline-flex items-center px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium rounded-lg transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4 mr-2"></i>
+                            View Project
+                        </a>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-900 mb-4">Project Summary</h3>
+                            <p class="text-slate-600 mb-6">
+                                A custom Discord bot assistant that integrates with a locally hosted LLaMA 3 model via Ollama, 
+                                designed to help manage daily tasks, reminders, and alerts in a natural and conversational way. 
+                                Built to provide a persistent, sarcastic Alfred-style assistant with smart task management.
+                            </p>
+
+                            <div class="mb-6">
+                                <h4 class="text-md font-semibold text-slate-900 mb-3">Key Features</h4>
+                                <ul class="text-slate-600 space-y-2 text-sm">
+                                    <li>• <strong>LLaMA 3 Integration:</strong> Natural, contextual conversation via Ollama</li>
+                                    <li>• <strong>Smart Reminders:</strong> Time-parsed and timezone-aware reminder system</li>
+                                    <li>• <strong>Task Management:</strong> Add, delete, mark complete via Discord chat</li>
+                                    <li>• <strong>Morning Briefings:</strong> Weather, schedule, and music updates</li>
+                                    <li>• <strong>Game Alerts:</strong> Notifications when friends start specific games</li>
+                                    <li>• <strong>Persistent Memory:</strong> Named memory system with SQLite storage</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="text-md font-semibold text-slate-900 mb-3">Technical Stack</h4>
+                                <div class="bg-slate-50 p-4 rounded-lg">
+                                    <div class="grid grid-cols-2 gap-4 text-sm">
+                                        <div>
+                                            <span class="font-medium text-slate-900">Backend:</span>
+                                            <span class="text-slate-600">Python, Discord.py</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">LLM Runtime:</span>
+                                            <span class="text-slate-600">LLaMA 3 via Ollama</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">Database:</span>
+                                            <span class="text-slate-600">SQLite</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">Deployment:</span>
+                                            <span class="text-slate-600">Docker, 24/7 uptime</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-900 mb-4">Technical Challenges</h3>
+                            <div class="space-y-4">
+                                <div class="bg-slate-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-slate-900 mb-2">LLM Integration</h5>
+                                    <p class="text-slate-600 text-sm">Hosting and querying a local LLaMA model while maintaining relevant, assistant-like responses and personality consistency.</p>
+                                </div>
+                                <div class="bg-slate-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-slate-900 mb-2">Natural Language Processing</h5>
+                                    <p class="text-slate-600 text-sm">Parsing natural language time input from users and converting to UTC reliably across timezones.</p>
+                                </div>
+                                <div class="bg-slate-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-slate-900 mb-2">Memory Architecture</h5>
+                                    <p class="text-slate-600 text-sm">Designing a system for persistent, recallable memory and tasks with efficient SQLite storage.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Primer Generator -->
+            <div class="project-card bg-white border border-slate-200 rounded-xl shadow-lg mb-16 overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900 mb-2">Allele-Specific Primer Generator</h2>
+                            <div class="flex items-center space-x-4">
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">Python</span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">BioPython</span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">Bioinformatics</span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/EldonBird/Bio_dpt" target="_blank" class="inline-flex items-center px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium rounded-lg transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4 mr-2"></i>
+                            View Project
+                        </a>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-900 mb-4">Project Summary</h3>
+                            <p class="text-slate-600 mb-6">
+                                A Python-based tool for designing SNP-specific primers that improve genotyping accuracy using 
+                                mismatch logic and quality control filtering. Automates the entire primer design pipeline from 
+                                sequence extraction to export-ready results, reducing manual errors in SNP-based PCR experiments.
+                            </p>
+
+                            <div class="mb-6">
+                                <h4 class="text-md font-semibold text-slate-900 mb-3">Key Features</h4>
+                                <ul class="text-slate-600 space-y-2 text-sm">
+                                    <li>• <strong>Mismatch-Aware Design:</strong> Intentional mismatches at antepenultimate position for allele specificity</li>
+                                    <li>• <strong>Bidirectional Support:</strong> Forward and reverse strands with full reverse complement logic</li>
+                                    <li>• <strong>Quality Filtering:</strong> primer3-py integration for Tm, GC content, hairpins, and dimers</li>
+                                    <li>• <strong>Primer Ranking:</strong> Sorts candidates by quality metrics and PCR suitability</li>
+                                    <li>• <strong>Multiplex Compatibility:</strong> Cross-reactivity checks for primer sets</li>
+                                    <li>• <strong>Structured Export:</strong> CSV/JSON output with metadata</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="text-md font-semibold text-slate-900 mb-3">Impact</h4>
+                                <div class="bg-slate-50 p-4 rounded-lg">
+                                    <div class="space-y-2 text-sm">
+                                        <div>
+                                            <span class="font-medium text-slate-900">Efficiency:</span>
+                                            <span class="text-slate-600">Reduces manual primer design effort by 80%</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">Accuracy:</span>
+                                            <span class="text-slate-600">Minimizes amplification errors in SNP-based PCR</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">Output:</span>
+                                            <span class="text-slate-600">Lab-ready primer sets with quality metrics</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-900 mb-4">Technical Implementation</h3>
+                            <div class="space-y-4">
+                                <div class="bg-slate-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-slate-900 mb-2">Primer Specificity Optimization</h5>
+                                    <p class="text-slate-600 text-sm">Implemented controlled mismatches at exact locations to increase allele-specific amplification.</p>
+                                </div>
+                                <div class="bg-slate-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-slate-900 mb-2">Strand-Aware Logic</h5>
+                                    <p class="text-slate-600 text-sm">Designed comprehensive handling for both 5'-to-3' and 3'-to-5' sequences using reverse complements.</p>
+                                </div>
+                                <div class="bg-slate-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-slate-900 mb-2">Automated Pairing</h5>
+                                    <p class="text-slate-600 text-sm">Built logic to find complementary primers for SNP amplification at specific genomic distances.</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-6">
+                                <h4 class="text-md font-semibold text-slate-900 mb-3">Technologies Used</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">Python</span>
+                                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">BioPython</span>
+                                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">primer3-py</span>
+                                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-orange-100 text-orange-800">pandas</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Machine Learning Portfolio -->
+            <div class="project-card bg-white border border-slate-200 rounded-xl shadow-lg mb-16 overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900 mb-2">Machine Learning Project Collection</h2>
+                            <div class="flex items-center space-x-4">
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">TensorFlow</span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">Computer Vision</span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">XGBoost</span>
+                            </div>
+                        </div>
+                        <a href="ml-portfolio.html" class="inline-flex items-center px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium rounded-lg transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4 mr-2"></i>
+                            View ML Portfolio
+                        </a>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-900 mb-4">Project Overview</h3>
+                            <p class="text-slate-600 mb-6">
+                                A comprehensive collection of machine learning projects showcasing various algorithms, techniques, 
+                                and real-world applications across computer vision, regression, and classification tasks. 
+                                Each project demonstrates different aspects of the ML pipeline from data preprocessing to model deployment.
+                            </p>
+
+                            <div class="mb-6">
+                                <h4 class="text-md font-semibold text-slate-900 mb-3">Featured Projects</h4>
+                                <ul class="text-slate-600 space-y-2 text-sm">
+                                    <li>• <strong>German Road Signs Classification:</strong> CNN for autonomous driving perception (99% accuracy)</li>
+                                    <li>• <strong>Bike Rental Prediction:</strong> Neural network for demand forecasting (R² = 0.96)</li>
+                                    <li>• <strong>Housing Price Prediction:</strong> XGBoost with Census data integration</li>
+                                    <li>• <strong>Bank Marketing Analysis:</strong> Classification for campaign optimization (91% accuracy)</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="text-md font-semibold text-slate-900 mb-3">Technical Skills Demonstrated</h4>
+                                <div class="bg-slate-50 p-4 rounded-lg">
+                                    <div class="grid grid-cols-2 gap-4 text-sm">
+                                        <div>
+                                            <span class="font-medium text-slate-900">Deep Learning:</span>
+                                            <span class="text-slate-600">CNNs, Neural Networks</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">ML Algorithms:</span>
+                                            <span class="text-slate-600">XGBoost, Random Forest</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">Computer Vision:</span>
+                                            <span class="text-slate-600">Image Classification</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">Data Engineering:</span>
+                                            <span class="text-slate-600">Feature Engineering</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-900 mb-4">Project Highlights</h3>
+                            <div class="space-y-4">
+                                <div class="bg-slate-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-slate-900 mb-2">Computer Vision Excellence</h5>
+                                    <p class="text-slate-600 text-sm">Achieved 100% accuracy on critical STOP sign classification for autonomous driving safety requirements.</p>
+                                </div>
+                                <div class="bg-slate-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-slate-900 mb-2">Advanced Feature Engineering</h5>
+                                    <p class="text-slate-600 text-sm">Integrated U.S. Census data with housing features to improve price prediction accuracy significantly.</p>
+                                </div>
+                                <div class="bg-slate-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-slate-900 mb-2">Real-World Applications</h5>
+                                    <p class="text-slate-600 text-sm">Projects address practical problems in transportation, finance, and urban planning with actionable insights.</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-6">
+                                <h4 class="text-md font-semibold text-slate-900 mb-3">Tools & Technologies</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">Python</span>
+                                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">TensorFlow</span>
+                                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">Scikit-learn</span>
+                                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-orange-100 text-orange-800">Pandas</span>
+                                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800">XGBoost</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Skills & Expertise Section -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">Technical Expertise</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Mobile Development -->
+                <div class="bg-white border border-slate-200 rounded-lg shadow-sm p-6">
+                    <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center">
+                        <i data-lucide="smartphone" class="w-5 h-5 mr-2 text-blue-500"></i>
+                        Mobile Development
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">Flutter</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">Dart</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">Firebase</span>
+                    </div>
+                </div>
+
+                <!-- AI & Machine Learning -->
+                <div class="bg-white border border-slate-200 rounded-lg shadow-sm p-6">
+                    <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center">
+                        <i data-lucide="brain" class="w-5 h-5 mr-2 text-green-500"></i>
+                        AI & ML
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">TensorFlow</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">LLaMA</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">Scikit-learn</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-orange-100 text-orange-800">XGBoost</span>
+                    </div>
+                </div>
+
+                <!-- Backend Development -->
+                <div class="bg-white border border-slate-200 rounded-lg shadow-sm p-6">
+                    <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center">
+                        <i data-lucide="server" class="w-5 h-5 mr-2 text-purple-500"></i>
+                        Backend & APIs
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">Python</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">Discord.py</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">SQLite</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-orange-100 text-orange-800">Docker</span>
+                    </div>
+                </div>
+
+                <!-- Bioinformatics -->
+                <div class="bg-white border border-slate-200 rounded-lg shadow-sm p-6">
+                    <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center">
+                        <i data-lucide="dna" class="w-5 h-5 mr-2 text-orange-500"></i>
+                        Bioinformatics
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">BioPython</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">primer3-py</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">FASTA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.linkedin.com/in/gracekazmierski/" target="_blank" class="text-slate-400 hover:text-white transition-colors">
+                    <span class="sr-only">LinkedIn</span>
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+                <a href="https://github.com/gracekazmierski" target="_blank" class="text-slate-400 hover:text-white transition-colors">
+                    <span class="sr-only">GitHub</span>
+                    <i data-lucide="github" class="w-6 h-6"></i>
+                </a>
+                <a href="mailto:gracekazzy@gmail.com" class="text-slate-400 hover:text-white transition-colors">
+                    <span class="sr-only">Email</span>
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                </a>
+            </div>
+            <p class="text-slate-400">&copy; 2024 Grace Kazmierski. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+
+        // Add hover effects to project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-4px)';
+                this.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Portfolio - Grace Kazmierski</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        .backdrop-blur {
+            backdrop-filter: blur(12px);
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        .hover-shadow:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+        }
+        .image-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            height: 300px;
+        }
+        .image-gallery img {
+            border-radius: 0.5rem;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 2px solid transparent;
+        }
+        .image-gallery img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.2);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            animation: zoomIn 0.3s ease;
+        }
+        
+        .modal-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 0.5rem;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s ease;
+        }
+        
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .image-gallery {
+                grid-template-columns: 1fr;
+                height: auto;
+                gap: 0.5rem;
+            }
+            .image-gallery img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen gradient-bg">
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">
+                <i data-lucide="x" class="w-5 h-5 text-slate-700"></i>
+            </button>
+            <img id="modalImage" class="modal-image" src="/placeholder.svg" alt="">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <a href="index.html" class="flex items-center text-slate-600 hover:text-slate-900 transition-colors">
+                    <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
+                    Back to Portfolio
+                </a>
+                <div class="text-xl font-bold text-slate-900 flex items-center">
+                    <i data-lucide="brain" class="w-5 h-5 mr-2 text-blue-400"></i>
+                    Machine Learning Portfolio
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://github.com/gracekazmierski" target="_blank" class="inline-flex items-center px-3 py-1 border border-slate-300 text-sm font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50 transition-colors">
+                        <i data-lucide="github" class="w-4 h-4 mr-2"></i>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="py-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-slate-900 mb-6">Machine Learning Portfolio</h1>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    A collection of machine learning projects showcasing various algorithms, techniques, and real-world applications
+                    across computer vision, regression, and classification tasks.
+                </p>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid md:grid-cols-4 gap-6 mb-16">
+                <div class="bg-white border border-slate-200 rounded-lg shadow-sm p-6 text-center">
+                    <i data-lucide="brain" class="w-8 h-8 text-blue-600 mx-auto mb-2"></i>
+                    <div class="text-2xl font-bold text-slate-900">4</div>
+                    <div class="text-sm text-slate-600">Major Projects</div>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-lg shadow-sm p-6 text-center">
+                    <i data-lucide="eye" class="w-8 h-8 text-green-600 mx-auto mb-2"></i>
+                    <div class="text-2xl font-bold text-slate-900">Computer Vision</div>
+                    <div class="text-sm text-slate-600">Image Classification</div>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-lg shadow-sm p-6 text-center">
+                    <i data-lucide="trending-up" class="w-8 h-8 text-purple-600 mx-auto mb-2"></i>
+                    <div class="text-2xl font-bold text-slate-900">Regression</div>
+                    <div class="text-sm text-slate-600">Predictive Modeling</div>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-lg shadow-sm p-6 text-center">
+                    <i data-lucide="layers" class="w-8 h-8 text-orange-600 mx-auto mb-2"></i>
+                    <div class="text-2xl font-bold text-slate-900">Deep Learning</div>
+                    <div class="text-sm text-slate-600">Neural Networks</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Project 1: German Road Signs -->
+            <div class="project-card bg-white border border-slate-200 rounded-xl shadow-lg mb-16 overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900 mb-2">German Road Signs Classification</h2>
+                            <div class="flex items-center space-x-4">
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">Computer Vision</span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">CNN</span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">TensorFlow</span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/gracekazmierski/machinelearning/blob/main/gehirnwagen_road_signs.ipynb" target="_blank" class="inline-flex items-center px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium rounded-lg transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4 mr-2"></i>
+                            View in Colab
+                        </a>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <!-- Project Description -->
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-900 mb-4">Project Summary</h3>
+                            <p class="text-slate-600 mb-6">
+                                Created a custom convolutional neural network to classify 43 classes of German traffic signs for a fictional self-driving car case study, GehirnWagen. 
+                                Using transfer learning and custom architecture, the model achieved strong generalization on unseen data and perfect classification of STOP signs — 
+                                a critical safety metric. This project simulates real-world constraints in autonomous driving perception.
+                            </p>
+
+                            <!-- Methods -->
+                            <div class="mb-6">
+                                <h4 class="text-md font-semibold text-slate-900 mb-3">Methods</h4>
+                                <ul class="text-slate-600 space-y-2 text-sm">
+                                    <li>• <strong>Data Preprocessing:</strong> Image resizing (100x100), normalization, extensive augmentation, oversampling of underrepresented classes</li>
+                                    <li>• <strong>Model Architecture:</strong> Custom CNN with 3 convolutional layers, batch normalization, dropout, and dense layers</li>
+                                    <li>• <strong>Training:</strong> Adam optimizer, early stopping, learning rate scheduler, and model checkpointing</li>
+                                    <li>• <strong>Evaluation:</strong> Accuracy, per-class F1, STOP-sign recall, and a full confusion matrix with performance thresholds</li>
+                                </ul>
+                            </div>
+
+                            <!-- Results -->
+                            <div>
+                                <h4 class="text-md font-semibold text-slate-900 mb-3">Results</h4>
+                                <div class="bg-slate-50 p-4 rounded-lg">
+                                    <div class="grid grid-cols-2 gap-4 text-sm">
+                                        <div>
+                                            <span class="font-medium text-slate-900">Holdout Accuracy:</span>
+                                            <span class="text-green-600 font-bold">99.0%</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">STOP Sign Accuracy:</span>
+                                            <span class="text-green-600 font-bold">100.0%</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">R² Score:</span>
+                                            <span class="text-slate-600">0.9958</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">Confidence Threshold:</span>
+                                            <span class="text-slate-600">98% regulatory, 85% warnings</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Gallery -->
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-900 mb-4">Project Visualizations</h3>
+                            <div class="image-gallery">
+                                <img src="/images/data_augmentation.png" alt="Data augmentation examples showing original and transformed German road signs" onclick="openModal(this)">
+                                <img src="/images/road_signs_cm.png" alt="Confusion matrix visualization for German road signs classification" onclick="openModal(this)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Bike Rentals -->
+            <div class="project-card bg-white border border-slate-200 rounded-xl shadow-lg mb-16 overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900 mb-2">Bike Rental Demand Prediction</h2>
+                            <div class="flex items-center space-x-4">
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">Regression</span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">Neural Network</span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">TensorFlow</span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/gracekazmierski/machinelearning/blob/main/bikerentals.ipynb" target="_blank" class="inline-flex items-center px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium rounded-lg transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4 mr-2"></i>
+                            View in Colab
+                        </a>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <!-- Project Description -->
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-900 mb-4">Project Summary</h3>
+                            <p class="text-slate-600 mb-6">
+                                Trained and optimized a neural network to predict hourly bike rental demand in Washington D.C. using the Capital Bikeshare dataset.
+                                Extensive feature engineering accounted for COVID-19 lockdown periods, weather, seasonality, and commute hours. The model was evaluated
+                                using time-aware train/test splits and tuned with early stopping and dropout regularization.
+                            </p>
+
+                            <!-- Methods -->
+                            <div class="mb-6">
+                                <h4 class="text-md font-semibold text-slate-900 mb-3">Methods</h4>
+                                <ul class="text-slate-600 space-y-2 text-sm">
+                                    <li>• <strong>Feature Engineering:</strong> Temporal breakdowns, lockdown indicators, commute flags, interaction terms</li>
+                                    <li>• <strong>Architecture:</strong> 3-layer fully connected network with dropout (256 → 128 → 64 → 1)</li>
+                                    <li>• <strong>Hyperparameter Tuning:</strong> Grid search over learning rate, layer size, and dropout with early stopping</li>
+                                    <li>• <strong>Validation:</strong> Time series split to avoid leakage (Aug 2023 cutoff)</li>
+                                </ul>
+                            </div>
+
+                            <!-- Results -->
+                            <div>
+                                <h4 class="text-md font-semibold text-slate-900 mb-3">Results</h4>
+                                <div class="bg-slate-50 p-4 rounded-lg">
+                                    <div class="grid grid-cols-2 gap-4 text-sm">
+                                        <div>
+                                            <span class="font-medium text-slate-900">R² Score:</span>
+                                            <span class="text-green-600 font-bold">0.9598</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">RMSE:</span>
+                                            <span class="text-green-600 font-bold">100.41</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">MAE:</span>
+                                            <span class="text-slate-600">68.03</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">Median Error:</span>
+                                            <span class="text-slate-600">42.94</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">Within 10%:</span>
+                                            <span class="text-slate-600">50.55%</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">Within 20%:</span>
+                                            <span class="text-slate-600">77.46%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Gallery -->
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-900 mb-4">Project Visualizations</h3>
+                            <div class="image-gallery">
+                                <img src="/images/bike_heatmap.png" alt="Bike rental demand heatmap showing patterns by hour and day" onclick="openModal(this)">
+                                <img src="/images/log_rentals.png" alt="Log transformation analysis of bike rental data" onclick="openModal(this)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Housing Data -->
+            <div class="project-card bg-white border border-slate-200 rounded-xl shadow-lg mb-16 overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900 mb-2">Housing Price Prediction</h2>
+                            <div class="flex items-center space-x-4">
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">Regression</span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">XGBoost</span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">Census Feature Engineering</span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/gracekazmierski/machinelearning/blob/main/king-county-housing.ipynb" target="_blank" class="inline-flex items-center px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium rounded-lg transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4 mr-2"></i>
+                            View in Colab
+                        </a>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <!-- Project Description -->
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-900 mb-4">Project Summary</h3>
+                            <p class="text-slate-600 mb-6">
+                                Built an XGBoost regression model to predict housing prices in King County using property features and enriched U.S. Census data.
+                                The pipeline included outlier mitigation, engineered interaction terms (e.g., living area × grade), and economic indicators such as income, education, and housing statistics.
+                            </p>
+
+                            <!-- Methods -->
+                            <div class="mb-6">
+                                <h4 class="text-md font-semibold text-slate-900 mb-3">Methods</h4>
+                                <ul class="text-slate-600 space-y-2 text-sm">
+                                    <li>• <strong>Feature Engineering:</strong> Interaction features, property age, and socioeconomic Census data</li>
+                                    <li>• <strong>Model:</strong> XGBoost Regressor inside a Pipeline with preprocessing</li>
+                                    <li>• <strong>Hyperparameter Tuning:</strong> Grid search with 5-fold cross-validation (over 120+ combinations)</li>
+                                    <li>• <strong>Evaluation:</strong> RMSE, R², and absolute/percentage error comparisons</li>
+                                </ul>
+                            </div>
+
+                            <!-- Results -->
+                            <div>
+                                <h4 class="text-md font-semibold text-slate-900 mb-3">Results</h4>
+                                <div class="bg-slate-50 p-4 rounded-lg">
+                                    <div class="grid grid-cols-2 gap-4 text-sm">
+                                        <div>
+                                            <span class="font-medium text-slate-900">Train RMSE:</span>
+                                            <span class="text-green-600 font-bold">$44,024</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">Train R²:</span>
+                                            <span class="text-green-600 font-bold">0.9805</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">Test RMSE:</span>
+                                            <span class="text-slate-600">$93,997</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">Test R²:</span>
+                                            <span class="text-slate-600">0.9145</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">Top Feature:</span>
+                                            <span class="text-slate-600">Bachelors+ % (2014)</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">Best Model:</span>
+                                            <span class="text-slate-600">XGBoost Regressor</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Gallery -->
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-900 mb-4">Project Visualizations</h3>
+                            <div class="image-gallery">
+                                <img src="/images/housing_features.png" alt="Top 10 feature importances for housing price prediction model" onclick="openModal(this)">
+                                <img src="/images/housing_errorss.png" alt="Error distribution scatterplot showing prediction accuracy" onclick="openModal(this)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Bank Data -->
+            <div class="project-card bg-white border border-slate-200 rounded-xl shadow-lg mb-16 overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900 mb-2">Bank Marketing Campaign Analysis</h2>
+                            <div class="flex items-center space-x-4">
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">Classification</span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">Logistic Regression</span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">Data Analysis</span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/gracekazmierski/machinelearning/blob/main/bank-marketing-campaign.ipynb" target="_blank" class="inline-flex items-center px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium rounded-lg transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4 mr-2"></i>
+                            View in Colab
+                        </a>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <!-- Project Description -->
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-900 mb-4">Project Summary</h3>
+                            <p class="text-slate-600 mb-6">
+                                Analyzed bank marketing campaign data to predict customer subscription to term deposits. The project involved 
+                                classification modeling to identify factors that influence customer decisions and optimize marketing strategies. 
+                                Used various machine learning algorithms to achieve high prediction accuracy and provide actionable business insights.
+                            </p>
+
+                            <!-- Methods -->
+                            <div class="mb-6">
+                                <h4 class="text-md font-semibold text-slate-900 mb-3">Methods</h4>
+                                <ul class="text-slate-600 space-y-2 text-sm">
+                                    <li>• <strong>Data Preprocessing:</strong> Handling categorical variables, missing values, and class imbalance</li>
+                                    <li>• <strong>Feature Engineering:</strong> Creating interaction terms and encoding categorical features</li>
+                                    <li>• <strong>Model Comparison:</strong> Logistic Regression, SVM, Random Forest, and Gradient Boosting</li>
+                                    <li>• <strong>Performance Metrics:</strong> Precision, Recall, F1-score, and ROC-AUC analysis</li>
+                                </ul>
+                            </div>
+
+                            <!-- Results -->
+                            <div>
+                                <h4 class="text-md font-semibold text-slate-900 mb-3">Results</h4>
+                                <div class="bg-slate-50 p-4 rounded-lg">
+                                    <div class="grid grid-cols-2 gap-4 text-sm">
+                                        <div>
+                                            <span class="font-medium text-slate-900">Accuracy:</span>
+                                            <span class="text-green-600 font-bold">91.2%</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">Precision:</span>
+                                            <span class="text-green-600 font-bold">0.847</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">Recall:</span>
+                                            <span class="text-slate-600">0.763</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">ROC-AUC:</span>
+                                            <span class="text-green-600 font-bold">0.923</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">F1-Score:</span>
+                                            <span class="text-slate-600">0.803</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium text-slate-900">Best Model:</span>
+                                            <span class="text-slate-600">Random Forest</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Gallery -->
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-900 mb-4">Project Visualizations</h3>
+                            <div class="image-gallery">
+                                <img src="/images/bank_features.png" alt="Feature importance analysis for bank marketing campaign prediction" onclick="openModal(this)">
+                                <img src="/images/bank_cm.png" alt="Confusion matrix for bank marketing classification model" onclick="openModal(this)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Skills & Tools Section -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">Tools & Technologies</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Programming Languages -->
+                <div class="bg-white border border-slate-200 rounded-lg shadow-sm p-6">
+                    <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center">
+                        <i data-lucide="code" class="w-5 h-5 mr-2 text-blue-500"></i>
+                        Programming Languages
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">Python</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">SQL</span>
+                    </div>
+                </div>
+
+                <!-- ML Libraries -->
+                <div class="bg-white border border-slate-200 rounded-lg shadow-sm p-6">
+                    <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center">
+                        <i data-lucide="layers" class="w-5 h-5 mr-2 text-green-500"></i>
+                        ML Libraries
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">Scikit-learn</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">TensorFlow</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">XGBoost</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">RandomForest</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-orange-100 text-orange-800">Pandas</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800">NumPy</span>
+                    </div>
+                </div>
+
+                <!-- Visualization -->
+                <div class="bg-white border border-slate-200 rounded-lg shadow-sm p-6">
+                    <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center">
+                        <i data-lucide="bar-chart" class="w-5 h-5 mr-2 text-purple-500"></i>
+                        Visualization
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">Matplotlib</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">Seaborn</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">Plotly</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.linkedin.com/in/gracekazmierski/" target="_blank" class="text-slate-400 hover:text-white transition-colors">
+                    <span class="sr-only">LinkedIn</span>
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+                <a href="https://github.com/gracekazmierski" target="_blank" class="text-slate-400 hover:text-white transition-colors">
+                    <span class="sr-only">GitHub</span>
+                    <i data-lucide="github" class="w-6 h-6"></i>
+                </a>
+                <a href="mailto:gracekazzy@gmail.com" class="text-slate-400 hover:text-white transition-colors">
+                    <span class="sr-only">Email</span>
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                </a>
+            </div>
+            <p class="text-slate-400">&copy; 2024 Grace Kazmierski. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Modal functionality
+        function openModal(img) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            
+            modal.classList.add('show');
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+            
+            // Prevent body scroll when modal is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('show');
+            
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside the image
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+
+        // Add hover effects to project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-4px)';
+                this.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)';
+            });
+        });
+    </script>
+</body>
+</html>

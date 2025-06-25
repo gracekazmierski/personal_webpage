@@ -1,0 +1,46 @@
+/* --- Custom Styles --- */
+
+/* This rule is still helpful for smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- Styling for the Flipping Text Bubble --- */
+
+/* This is the base style for BOTH text bubbles */
+.text-bubble {
+    /* Positioning */
+    position: absolute;
+    bottom: -1rem;
+    right: -1rem;
+    
+    /* Styling */
+    background-color: #2563eb; /* bg-blue-600 */
+    color: white;
+    padding: 1rem;
+    border-radius: 9999px;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+    /* This transition handles the SMOOTH FADE when you move the mouse AWAY */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* The back bubble starts off completely transparent (hidden) */
+.back-bubble {
+    opacity: 0;
+}
+
+/* When you hover the flip-card-container... */
+
+/* ...the front bubble disappears INSTANTLY after the delay. */
+.flip-card-container:hover ~ .front-bubble {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* ...and the back bubble appears INSTANTLY after the delay. */
+.flip-card-container:hover ~ .back-bubble {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}

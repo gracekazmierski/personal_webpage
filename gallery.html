@@ -1,83 +1,223 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Grace Kazmierski Portfolio - Page Under Construction">
-    <title>Under Production - Grace Kazmierski</title>
-    
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css"> 
-    <style>
-        .preserve-3d { transform-style: preserve-3d; }
-        .backface-hidden { backface-visibility: hidden; }
-        .perspective { perspective: 1000px; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery - Grace Kazmierski</title>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <style>
+    .masonry { column-gap: 1rem; }
+    .masonry-item { break-inside: avoid; margin-bottom: 1rem; }
+    .hover-raise { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+    .hover-raise:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,.08); }
+    .img-frame { border: 1px solid rgba(15,23,42,.08); }
+
+    @media (min-width: 640px) { .masonry { column-count: 2; } }
+    @media (min-width: 1024px) { .masonry { column-count: 3; } }
+    @media (min-width: 1536px) { .masonry { column-count: 4; } }
+
+    .modal {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,.9); align-items: center; justify-content: center;
+    }
+    .modal.show { display: flex; }
+    .modal-image { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: .5rem; }
+    .modal-close {
+      position: absolute; top: 2rem; right: 2rem; width: 42px; height: 42px;
+      display: grid; place-items: center; border-radius: 9999px; border: 1px solid rgba(148,163,184,.6);
+      background: rgba(255,255,255,.92); transition: background .2s ease;
+    }
+    .modal-close:hover { background: #fff; }
+  </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
 
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="text-2xl font-bold text-slate-900">
-                    <a href="index.html">Grace Kazmierski</a>
-                </div>
-                <div class="hidden md:flex flex-grow justify-center space-x-12">
-                    <a href="about.html" class="text-slate-600 hover:text-blue-600 transition-colors">About</a>
-                    <a href="machinelearning.html" class="text-slate-600 hover:text-blue-600 transition-colors">Machine Learning</a>
-                    <a href="projects.html" class="text-slate-600 hover:text-blue-600 transition-colors">Projects</a>
-                    <a href="gallery.html" class="text-slate-600 hover:text-blue-600 transition-colors">Gallery</a>
-                    <a href="ux.html" class="text-slate-600 hover:text-blue-600 transition-colors">UX Research</a>
-                </div>
-                <div class="flex space-x-2">
-                    <a href="https://www.linkedin.com/in/gracekazmierski/" target="_blank" class="flex items-center p-2 border rounded-md bg-white text-slate-700 hover:bg-slate-100 transition-colors">
-                        <i data-lucide="linkedin" class="w-4 h-4"></i>
-                    </a>
-                    <a href="https://github.com/gracekazmierski" target="_blank" class="flex items-center p-2 border rounded-md bg-white text-slate-700 hover:bg-slate-100 transition-colors">
-                        <i data-lucide="github" class="w-4 h-4"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
+  <div id="imageModal" class="modal">
+    <button class="modal-close" aria-label="Close" onclick="closeModal()">
+      <i data-lucide="x" class="w-5 h-5 text-slate-700"></i>
+    </button>
+    <img id="modalImage" class="modal-image" src="" alt="">
+  </div>
 
-    <main>
-        <div class="flex items-center justify-center text-center" style="min-height: calc(100vh - 12rem);">
-            <div>
-                <i data-lucide="construction" class="w-16 h-16 mx-auto text-amber-500 mb-4"></i>
-                
-                <h1 class="text-4xl font-bold text-slate-900">Currently Under Production</h1>
-                <p class="text-lg text-slate-600 mt-2">This page is being built. Please check back soon!</p>
+  <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-3">
+      <a href="index.html" class="flex items-center text-slate-600 hover:text-slate-900 transition-colors">
+        <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
+        Back to Portfolio
+      </a>
+      <div class="text-xl font-bold text-slate-900 flex items-center">
+        <i data-lucide="image" class="w-5 h-5 mr-2 text-blue-400"></i>
+        Photo Gallery
+      </div>
+      <div class="flex space-x-4">
+        <a href="https://github.com/gracekazmierski" target="_blank" class="inline-flex items-center px-3 py-1 border border-slate-300 text-sm font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50 transition-colors">
+          <i data-lucide="github" class="w-4 h-4 mr-2"></i>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+  
 
-                <a href="/" class="mt-8 inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow">
-                    Back to Home
-                </a>
-            </div>
-        </div>
-    </main>
-    
-    <footer class="bg-slate-900 text-white py-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="flex justify-center space-x-6 mb-4">
-                <a href="https://www.linkedin.com/in/gracekazmierski/" target="_blank" class="text-slate-400 hover:text-white transition-colors">
-                    <span class="sr-only">LinkedIn</span>
-                    <i data-lucide="linkedin" class="w-6 h-6"></i>
-                </a>
-                <a href="https://github.com/gracekazmierski" target="_blank" class="text-slate-400 hover:text-white transition-colors">
-                    <span class="sr-only">GitHub</span>
-                    <i data-lucide="github" class="w-6 h-6"></i>
-                </a>
-                <a href="mailto:gracekazzy@gmail.com" class="text-slate-400 hover:text-white transition-colors">
-                    <span class="sr-only">Email</span>
-                    <i data-lucide="mail" class="w-6 h-6"></i>
-                </a>
-            </div>
-            <p class="text-slate-400">&copy; <span id="year"></span> Grace Kazmierski. All rights reserved.</p>
-        </div>
-    </footer>
+  <header class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl font-bold text-slate-900 mb-4">Gallery</h1>
+      <p class="text-slate-600 max-w-2xl mx-auto">
+        A quick glimpse into my life outside of work & school.
+      </p>
+    </div>
+  </header>
 
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="script.js"></script>
+  <main class="pb-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="masonry">
+
+        <figure class="masonry-item overflow-hidden rounded-lg bg-white img-frame hover-raise">
+          <img src="gallery/wedding-pfp.JPEG" alt="wedding-pfp" loading="lazy" class="w-full h-auto cursor-zoom-in" onclick="openModal(this)">
+        </figure>
+        <figure class="masonry-item overflow-hidden rounded-lg bg-white img-frame hover-raise">
+          <img src="gallery/baking.JPEG" alt="baking" loading="lazy" class="w-full h-auto cursor-zoom-in" onclick="openModal(this)">
+        </figure>
+
+        <figure class="masonry-item overflow-hidden rounded-lg bg-white img-frame hover-raise">
+          <img src="gallery/city-hall.JPEg" alt="city-hall" loading="lazy" class="w-full h-auto cursor-zoom-in" onclick="openModal(this)">
+        </figure>
+
+        <figure class="masonry-item overflow-hidden rounded-lg bg-white img-frame hover-raise">
+          <img src="gallery/dad-and-me.JPEG" alt="dad-and-me" loading="lazy" class="w-full h-auto cursor-zoom-in" onclick="openModal(this)">
+        </figure>
+
+        <figure class="masonry-item overflow-hidden rounded-lg bg-white img-frame hover-raise">
+          <img src="gallery/devils-tower.JPEG" alt="devils-tower" loading="lazy" class="w-full h-auto cursor-zoom-in" onclick="openModal(this)">
+        </figure>
+
+        <figure class="masonry-item overflow-hidden rounded-lg bg-white img-frame hover-raise">
+          <img src="gallery/family_wedding.JPEG" alt="family_wedding" loading="lazy" class="w-full h-auto cursor-zoom-in" onclick="openModal(this)">
+        </figure>
+
+        <figure class="masonry-item overflow-hidden rounded-lg bg-white img-frame hover-raise">
+          <img src="gallery/grandma-bertha.JPEG" alt="grandma-bertha" loading="lazy" class="w-full h-auto cursor-zoom-in" onclick="openModal(this)">
+        </figure>
+
+        <figure class="masonry-item overflow-hidden rounded-lg bg-white img-frame hover-raise">
+          <img src="gallery/liv-grace.JPEG" alt="liv-grace" loading="lazy" class="w-full h-auto cursor-zoom-in" onclick="openModal(this)">
+        </figure>
+
+        <figure class="masonry-item overflow-hidden rounded-lg bg-white img-frame hover-raise">
+          <img src="gallery/mako.JPEG" alt="mako" loading="lazy" class="w-full h-auto cursor-zoom-in" onclick="openModal(this)">
+        </figure>
+
+        <figure class="masonry-item overflow-hidden rounded-lg bg-white img-frame hover-raise">
+          <img src="gallery/mall.png" alt="mall" loading="lazy" class="w-full h-auto cursor-zoom-in" onclick="openModal(this)">
+        </figure>
+
+        <figure class="masonry-item overflow-hidden rounded-lg bg-white img-frame hover-raise">
+          <img src="gallery/mario-world.PNG" alt="mario-world" loading="lazy" class="w-full h-auto cursor-zoom-in" onclick="openModal(this)">
+        </figure>
+
+        <figure class="masonry-item overflow-hidden rounded-lg bg-white img-frame hover-raise">
+          <img src="gallery/matt-grace-christmas.JPEG" alt="matt-grace-chrostmas" loading="lazy" class="w-full h-auto cursor-zoom-in" onclick="openModal(this)">
+        </figure>
+
+        <figure class="masonry-item overflow-hidden rounded-lg bg-white img-frame hover-raise">
+          <img src="gallery/matt-piggyback.JPEG" alt="matt-piggyback" loading="lazy" class="w-full h-auto cursor-zoom-in" onclick="openModal(this)">
+        </figure>
+
+        <figure class="masonry-item overflow-hidden rounded-lg bg-white img-frame hover-raise">
+          <img src="gallery/mom-and-me.JPEG" alt="mom-and-me" loading="lazy" class="w-full h-auto cursor-zoom-in" onclick="openModal(this)">
+        </figure>
+
+        <figure class="masonry-item overflow-hidden rounded-lg bg-white img-frame hover-raise">
+          <img src="gallery/mt-rushmore.png" alt="mt-rushmore" loading="lazy" class="w-full h-auto cursor-zoom-in" onclick="openModal(this)">
+        </figure>
+
+        <figure class="masonry-item overflow-hidden rounded-lg bg-white img-frame hover-raise">
+          <img src="gallery/pride.png" alt="pride" loading="lazy" class="w-full h-auto cursor-zoom-in" onclick="openModal(this)">
+        </figure>
+
+        <figure class="masonry-item overflow-hidden rounded-lg bg-white img-frame hover-raise">
+          <img src="gallery/red-sox.png" alt="red-sox" loading="lazy" class="w-full h-auto cursor-zoom-in" onclick="openModal(this)">
+        </figure>
+
+        <figure class="masonry-item overflow-hidden rounded-lg bg-white img-frame hover-raise">
+          <img src="gallery/rex-ride.JPEG" alt="rex-ride" loading="lazy" class="w-full h-auto cursor-zoom-in" onclick="openModal(this)">
+        </figure>
+
+        <figure class="masonry-item overflow-hidden rounded-lg bg-white img-frame hover-raise">
+          <img src="gallery/sun-news.JPEG" alt="sun-news" loading="lazy" class="w-full h-auto cursor-zoom-in" onclick="openModal(this)">
+        </figure>
+
+        <figure class="masonry-item overflow-hidden rounded-lg bg-white img-frame hover-raise">
+          <img src="gallery/sun-news-staff.JPEG" alt="sun-news-staff" loading="lazy" class="w-full h-auto cursor-zoom-in" onclick="openModal(this)">
+        </figure>
+
+        <figure class="masonry-item overflow-hidden rounded-lg bg-white img-frame hover-raise">
+          <img src="gallery/surgery.JPEG" alt="surgery" loading="lazy" class="w-full h-auto cursor-zoom-in" onclick="openModal(this)">
+        </figure>
+
+        <figure class="masonry-item overflow-hidden rounded-lg bg-white img-frame hover-raise">
+          <img src="gallery/tokyo-rain.JPEG" alt="tokyo-rain" loading="lazy" class="w-full h-auto cursor-zoom-in" onclick="openModal(this)">
+        </figure>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="flex justify-center space-x-6 mb-4">
+        <a href="https://www.linkedin.com/in/gracekazmierski/" target="_blank" class="text-slate-400 hover:text-white transition-colors" aria-label="LinkedIn">
+          <i data-lucide="linkedin" class="w-6 h-6"></i>
+        </a>
+        <a href="https://github.com/gracekazmierski" target="_blank" class="text-slate-400 hover:text-white transition-colors" aria-label="GitHub">
+          <i data-lucide="github" class="w-6 h-6"></i>
+        </a>
+        <a href="mailto:gracekazzy@gmail.com" class="text-slate-400 hover:text-white transition-colors" aria-label="Email">
+          <i data-lucide="mail" class="w-6 h-6"></i>
+        </a>
+      </div>
+      <p class="text-slate-400">&copy; <span id="year"></span> Grace Kazmierski. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Icons
+    lucide.createIcons();
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Modal helpers
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+
+    function openModal(imgEl) {
+      modal.classList.add('show');
+      modalImg.src = imgEl.src;
+      modalImg.alt = imgEl.alt || '';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      modal.classList.remove('show');
+      modalImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    // Close modal on background click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // Escape to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
 </body>
 </html>

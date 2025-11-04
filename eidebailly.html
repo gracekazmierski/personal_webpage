@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eide Bailly Internship - Grace Kazmierski</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <style>
+    .gradient-bg { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); }
+    .backdrop-blur { backdrop-filter: blur(12px); }
+    .project-card { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+    .project-card:hover { transform: translateY(-4px); box-shadow: 0 18px 30px -12px rgba(2,6,23,.25); border-color: rgba(59,130,246,.25); }
+    .chip { display:inline-flex; align-items:center; padding:.25rem .5rem; border-radius:9999px; font-size:.75rem; font-weight:600; border-width:1px; }
+    .tilt:hover { transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) translateY(-3px); }
+  </style>
+</head>
+<body class="min-h-screen gradient-bg text-slate-800">
+
+  <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-3">
+        <a href="index.html" class="flex items-center text-slate-600 hover:text-slate-900 transition-colors">
+          <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
+          Back to Portfolio
+        </a>
+        <div class="text-xl font-bold text-slate-900 flex items-center">
+          <i data-lucide="briefcase" class="w-5 h-5 mr-2 text-blue-400"></i>
+          Eide Bailly — Internship
+        </div>
+        <div class="flex space-x-4">
+          <a href="resume.html" class="inline-flex items-center px-3 py-1 border border-slate-300 text-sm font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50 transition-colors">
+            <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
+            Resume
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-slate-900 mb-6">CRM Consulting Intern - Project Management</h1>
+        <div class="flex flex-wrap items-center justify-center gap-6 text-slate-600">
+          <span class="inline-flex items-center"><i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>Twin Falls, ID (Remote)</span>
+          <span class="inline-flex items-center"><i data-lucide="calendar" class="w-4 h-4 mr-2"></i>Sep 2025 – Present</span>
+        </div>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto mt-6">
+          Deliver CRM-focused client work across Salesforce and Microsoft Dynamics 365. Own scope, schedule, budget, and client satisfaction with a steady, collaborative approach. Coordinate cross-functional teams to plan, build, test, cut over, and stabilize solutions.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-16">
+        <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-6 text-center project-card tilt">
+          <i data-lucide="layers" class="w-8 h-8 text-blue-600 mx-auto mb-2"></i>
+          <div class="text-2xl font-bold text-slate-900">Salesforce & D365</div>
+          <div class="text-sm text-slate-600">CRM Project Management</div>
+          <div class="mt-3 space-x-2">
+            <span class="chip bg-blue-50 text-blue-700 border-blue-200">CRM</span>
+            <span class="chip bg-indigo-50 text-indigo-700 border-indigo-200">Platform</span>
+          </div>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-6 text-center project-card tilt">
+          <i data-lucide="banknote" class="w-8 h-8 text-green-600 mx-auto mb-2"></i>
+          <div class="text-2xl font-bold text-slate-900">$100K+</div>
+          <div class="text-sm text-slate-600">Project Budgets Managed</div>
+          <div class="mt-3"><span class="chip bg-green-50 text-green-700 border-green-200">T&M / Fixed</span></div>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-6 text-center project-card tilt">
+          <i data-lucide="target" class="w-8 h-8 text-orange-600 mx-auto mb-2"></i>
+          <div class="text-2xl font-bold text-slate-900">On-scope | On-time</div>
+          <div class="text-sm text-slate-600">Governance & cadence</div>
+          <div class="mt-3"><span class="chip bg-amber-50 text-amber-700 border-amber-200">RAID & Change</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="project-card bg-white border border-slate-200 rounded-xl shadow-lg mb-12 overflow-hidden">
+        <div class="p-8">
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">Role Summary</h2>
+          <ul class="list-disc list-inside text-slate-700 space-y-2">
+            <li>Manage budget, timeline, scope, profitability, and client satisfaction for mid- to large-size <strong>CRM</strong> engagements.</li>
+            <li>Focus on Salesforce with adjacent workstreams in Microsoft Dynamics 365.</li>
+            <li>Lead cross-functional delivery across consultants, developers, and stakeholders.</li>
+            <li>Own planning, status, and risk cadences; keep documentation and communications current and precise.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+        <div class="project-card bg-white border border-slate-200 rounded-xl shadow-lg overflow-hidden">
+          <div class="p-8">
+            <h3 class="text-xl font-semibold text-slate-900 mb-4">Delivery & Governance</h3>
+            <ul class="list-disc list-inside text-slate-700 space-y-2">
+              <li>Proactively manage project scope, risks, and stakeholder expectations; reset expectations with clear, confident communication.</li>
+              <li>Foster healthy, collaborative relationships with clients and internal teams.</li>
+              <li>Maximize project profitability while maintaining high standards of client service.</li>
+              <li>Coordinate milestones from design through testing, cutover, go-live, and stabilization.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="project-card bg-white border border-slate-200 rounded-xl shadow-lg overflow-hidden">
+          <div class="p-8">
+            <h3 class="text-xl font-semibold text-slate-900 mb-4">Operations & Controls</h3>
+            <ul class="list-disc list-inside text-slate-700 space-y-2">
+              <li>Keep core artifacts accurate and current: project record, plan, RAID, and resource allocations.</li>
+              <li>Ensure accurate time entry; manage invoicing and accounts receivable.</li>
+              <li>Maintain delivery velocity with appropriate staffing, measurable outcomes, and active client engagement.</li>
+            </ul>
+          </div>
+        </div>
+      </div>      
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="project-card bg-white border border-slate-200 rounded-xl shadow-lg overflow-hidden">
+          <div class="p-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Tools & Platforms</h2>
+            <ul class="list-disc list-inside text-slate-700 space-y-1">
+              <li>CRM platforms (Salesforce, Microsoft Dynamics 365)</li>
+              <li>Work management & scheduling tools</li>
+              <li>Collaboration & documentation suites</li>
+              <li>Time entry, invoicing, and financial tracking systems</li>
+              <li>Team communication & status reporting channels</li>
+            </ul>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="chip bg-sky-50 text-sky-700 border-sky-200">Microsoft Solutions</span>
+              <span class="chip bg-rose-50 text-rose-700 border-rose-200">NetSuite</span>
+                <span class="chip bg-green-50 text-green-700 border-green-200">Smartsheets</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card bg-white border border-slate-200 rounded-xl shadow-lg overflow-hidden">
+          <div class="p-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">PM Competencies</h2>
+            <ul class="list-disc list-inside text-slate-700 space-y-1">
+              <li>Resource allocations & capacity planning</li>
+              <li>Budget tracking & margin protection</li>
+              <li>Risk registers & RAID governance</li>
+              <li>Change control & scope management</li>
+              <li>Cutover planning & go-live readiness</li>
+              <li>Time entry accuracy, invoicing, A/R follow-up</li>
+            </ul>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="chip bg-sky-50 text-sky-700 border-sky-200">Agile Cadences</span>
+              <span class="chip bg-rose-50 text-rose-700 border-rose-200">Change Control</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card bg-white border border-slate-200 rounded-xl shadow-lg overflow-hidden mt-8">
+        <div class="p-8">
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">PACO Operating Principles</h2>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 text-center">
+              <i data-lucide="zap" class="w-6 h-6 text-amber-500 mx-auto mb-2"></i>
+              <div class="font-semibold text-slate-900">Proactivity</div>
+              <div class="text-xs text-slate-600">Surface risks early. Drive clarity.</div>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 text-center">
+              <i data-lucide="megaphone" class="w-6 h-6 text-red-500 mx-auto mb-2"></i>
+              <div class="font-semibold text-slate-900">Assertiveness</div>
+              <div class="text-xs text-slate-600">Protect scope, timeline, budget.</div>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 text-center">
+              <i data-lucide="message-square" class="w-6 h-6 text-blue-600 mx-auto mb-2"></i>
+              <div class="font-semibold text-slate-900">Communication</div>
+              <div class="text-xs text-slate-600">Concise status. Clear changes.</div>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 text-center">
+              <i data-lucide="calendar-check" class="w-6 h-6 text-emerald-600 mx-auto mb-2"></i>
+              <div class="font-semibold text-slate-900">Organization</div>
+              <div class="text-xs text-slate-600">Tidy RAID. Clean allocations.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card bg-white border border-slate-200 rounded-xl shadow-lg overflow-hidden mt-8">
+        <div class="p-8">
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">Future Consultants Program</h2>
+          <p class="text-slate-700">
+            Eide Bailly’s Future Consultants program develops high-performing interns into consultants through structured training, shadowing,
+            and mentored delivery—emphasizing ownership, clarity, consistent execution, and client
+            satisfaction to build readiness for the next role.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-slate-900 text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="flex justify-center space-x-6 mb-4">
+        <a href="https://www.linkedin.com/in/gracekazmierski/" target="_blank" class="text-slate-400 hover:text-white transition-colors" aria-label="LinkedIn">
+          <i data-lucide="linkedin" class="w-6 h-6"></i>
+        </a>
+        <a href="https://github.com/gracekazmierski" target="_blank" class="text-slate-400 hover:text-white transition-colors" aria-label="GitHub">
+          <i data-lucide="github" class="w-6 h-6"></i>
+        </a>
+        <a href="mailto:gracekazzy@gmail.com" class="text-slate-400 hover:text-white transition-colors" aria-label="Email">
+          <i data-lucide="mail" class="w-6 h-6"></i>
+        </a>
+      </div>
+      <p class="text-slate-400">&copy; <span id="year"></span> Grace Kazmierski. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

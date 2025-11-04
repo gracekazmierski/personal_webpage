@@ -124,7 +124,6 @@
     </style>
 </head>
 <body class="min-h-screen gradient-bg">
-    <!-- Image Modal -->
     <div id="imageModal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal()">
@@ -134,7 +133,6 @@
         </div>
     </div>
 
-    <!-- Navigation -->
     <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-3">
@@ -156,7 +154,6 @@
         </div>
     </nav>
 
-    <!-- Header Section -->
     <section class="py-16">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -167,7 +164,6 @@
                 </p>
             </div>
 
-            <!-- Stats -->
             <div class="grid md:grid-cols-4 gap-6 mb-16">
                 <div class="bg-white border border-slate-200 rounded-lg shadow-sm p-6 text-center">
                     <i data-lucide="brain" class="w-8 h-8 text-blue-600 mx-auto mb-2"></i>
@@ -193,11 +189,8 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section class="py-16 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <!-- Project 1: German Road Signs -->
             <div class="project-card bg-white border border-slate-200 rounded-xl shadow-lg mb-16 overflow-hidden">
                 <div class="p-8">
                     <div class="flex items-center justify-between mb-6">
@@ -216,7 +209,6 @@
                     </div>
 
                     <div class="grid lg:grid-cols-2 gap-8">
-                        <!-- Project Description -->
                         <div>
                             <h3 class="text-lg font-semibold text-slate-900 mb-4">Project Summary</h3>
                             <p class="text-slate-600 mb-6">
@@ -225,7 +217,6 @@
                                 a critical safety metric. This project simulates real-world constraints in autonomous driving perception.
                             </p>
 
-                            <!-- Methods -->
                             <div class="mb-6">
                                 <h4 class="text-md font-semibold text-slate-900 mb-3">Methods</h4>
                                 <ul class="text-slate-600 space-y-2 text-sm">
@@ -236,7 +227,6 @@
                                 </ul>
                             </div>
 
-                            <!-- Results -->
                             <div>
                                 <h4 class="text-md font-semibold text-slate-900 mb-3">Results</h4>
                                 <div class="bg-slate-50 p-4 rounded-lg">
@@ -262,7 +252,6 @@
                             </div>
                         </div>
 
-                        <!-- Image Gallery -->
                         <div>
                             <h3 class="text-lg font-semibold text-slate-900 mb-4">Project Visualizations</h3>
                             <div class="image-gallery">
@@ -274,7 +263,6 @@
                 </div>
             </div>
 
-            <!-- Project 2: Bike Rentals -->
             <div class="project-card bg-white border border-slate-200 rounded-xl shadow-lg mb-16 overflow-hidden">
                 <div class="p-8">
                     <div class="flex items-center justify-between mb-6">
@@ -293,7 +281,6 @@
                     </div>
 
                     <div class="grid lg:grid-cols-2 gap-8">
-                        <!-- Project Description -->
                         <div>
                             <h3 class="text-lg font-semibold text-slate-900 mb-4">Project Summary</h3>
                             <p class="text-slate-600 mb-6">
@@ -301,8 +288,6 @@
                                 Extensive feature engineering accounted for COVID-19 lockdown periods, weather, seasonality, and commute hours. The model was evaluated
                                 using time-aware train/test splits and tuned with early stopping and dropout regularization.
                             </p>
-
-                            <!-- Methods -->
                             <div class="mb-6">
                                 <h4 class="text-md font-semibold text-slate-900 mb-3">Methods</h4>
                                 <ul class="text-slate-600 space-y-2 text-sm">
@@ -312,8 +297,6 @@
                                     <li>• <strong>Validation:</strong> Time series split to avoid leakage (Aug 2023 cutoff)</li>
                                 </ul>
                             </div>
-
-                            <!-- Results -->
                             <div>
                                 <h4 class="text-md font-semibold text-slate-900 mb-3">Results</h4>
                                 <div class="bg-slate-50 p-4 rounded-lg">
@@ -347,7 +330,6 @@
                             </div>
                         </div>
 
-                        <!-- Image Gallery -->
                         <div>
                             <h3 class="text-lg font-semibold text-slate-900 mb-4">Project Visualizations</h3>
                             <div class="image-gallery">
@@ -358,8 +340,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Project 3: Housing Data -->
             <div class="project-card bg-white border border-slate-200 rounded-xl shadow-lg mb-16 overflow-hidden">
                 <div class="p-8">
                     <div class="flex items-center justify-between mb-6">
@@ -378,15 +358,12 @@
                     </div>
 
                     <div class="grid lg:grid-cols-2 gap-8">
-                        <!-- Project Description -->
                         <div>
                             <h3 class="text-lg font-semibold text-slate-900 mb-4">Project Summary</h3>
                             <p class="text-slate-600 mb-6">
                                 Built an XGBoost regression model to predict housing prices in King County using property features and enriched U.S. Census data.
                                 The pipeline included outlier mitigation, engineered interaction terms (e.g., living area × grade), and economic indicators such as income, education, and housing statistics.
                             </p>
-
-                            <!-- Methods -->
                             <div class="mb-6">
                                 <h4 class="text-md font-semibold text-slate-900 mb-3">Methods</h4>
                                 <ul class="text-slate-600 space-y-2 text-sm">
@@ -396,8 +373,6 @@
                                     <li>• <strong>Evaluation:</strong> RMSE, R², and absolute/percentage error comparisons</li>
                                 </ul>
                             </div>
-
-                            <!-- Results -->
                             <div>
                                 <h4 class="text-md font-semibold text-slate-900 mb-3">Results</h4>
                                 <div class="bg-slate-50 p-4 rounded-lg">
@@ -430,8 +405,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Image Gallery -->
                         <div>
                             <h3 class="text-lg font-semibold text-slate-900 mb-4">Project Visualizations</h3>
                             <div class="image-gallery">
@@ -442,8 +415,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Project 4: Bank Data -->
             <div class="project-card bg-white border border-slate-200 rounded-xl shadow-lg mb-16 overflow-hidden">
                 <div class="p-8">
                     <div class="flex items-center justify-between mb-6">
@@ -462,7 +433,6 @@
                     </div>
 
                     <div class="grid lg:grid-cols-2 gap-8">
-                        <!-- Project Description -->
                         <div>
                             <h3 class="text-lg font-semibold text-slate-900 mb-4">Project Summary</h3>
                             <p class="text-slate-600 mb-6">
@@ -470,8 +440,6 @@
                                 classification modeling to identify factors that influence customer decisions and optimize marketing strategies. 
                                 Used various machine learning algorithms to achieve high prediction accuracy and provide actionable business insights.
                             </p>
-
-                            <!-- Methods -->
                             <div class="mb-6">
                                 <h4 class="text-md font-semibold text-slate-900 mb-3">Methods</h4>
                                 <ul class="text-slate-600 space-y-2 text-sm">
@@ -481,8 +449,6 @@
                                     <li>• <strong>Performance Metrics:</strong> Precision, Recall, F1-score, and ROC-AUC analysis</li>
                                 </ul>
                             </div>
-
-                            <!-- Results -->
                             <div>
                                 <h4 class="text-md font-semibold text-slate-900 mb-3">Results</h4>
                                 <div class="bg-slate-50 p-4 rounded-lg">
@@ -515,8 +481,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Image Gallery -->
                         <div>
                             <h3 class="text-lg font-semibold text-slate-900 mb-4">Project Visualizations</h3>
                             <div class="image-gallery">
@@ -530,13 +494,10 @@
 
         </div>
     </section>
-
-    <!-- Skills & Tools Section -->
     <section class="py-16 bg-slate-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">Tools & Technologies</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Programming Languages -->
                 <div class="bg-white border border-slate-200 rounded-lg shadow-sm p-6">
                     <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center">
                         <i data-lucide="code" class="w-5 h-5 mr-2 text-blue-500"></i>
@@ -547,8 +508,6 @@
                         <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">SQL</span>
                     </div>
                 </div>
-
-                <!-- ML Libraries -->
                 <div class="bg-white border border-slate-200 rounded-lg shadow-sm p-6">
                     <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center">
                         <i data-lucide="layers" class="w-5 h-5 mr-2 text-green-500"></i>
@@ -563,8 +522,6 @@
                         <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800">NumPy</span>
                     </div>
                 </div>
-
-                <!-- Visualization -->
                 <div class="bg-white border border-slate-200 rounded-lg shadow-sm p-6">
                     <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center">
                         <i data-lucide="bar-chart" class="w-5 h-5 mr-2 text-purple-500"></i>
@@ -579,8 +536,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
     <footer class="bg-slate-900 text-white py-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="flex justify-center space-x-6 mb-4">
